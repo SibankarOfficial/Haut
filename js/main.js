@@ -341,3 +341,22 @@ AOS.init();
             jQuery(this).parent().parent().find('.de_tab_content > div:eq(' + indexer + ')').fadeIn(); //uses whatever index the link has to open the corresponding box 
             jQuery(this).find('.v-border').fadeTo(150, 1);
         });
+
+
+         const wrapper = document.querySelector(".word-wrapper");
+  const words = wrapper.querySelectorAll(".word");
+
+  let currentIndex = 0;
+
+  function updateWidth() {
+    const currentWord = words[currentIndex];
+    wrapper.style.width = currentWord.offsetWidth + "px";
+
+    currentIndex = (currentIndex + 1) % words.length;
+  }
+
+  // Initial set
+  window.addEventListener("load", () => {
+    updateWidth();
+    setInterval(updateWidth, 3000); // match animation-delay interval (3s)
+  });

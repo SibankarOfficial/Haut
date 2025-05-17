@@ -319,7 +319,35 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     document.querySelector('.loader-wrapper').style.display = 'none';
     document.querySelector('.main-content').style.display = 'block';
-  }, 2000); // 2 seconds
+  }, 3000); // 2 seconds
+});
+$(document).ready(function() {
+  var words = [
+    "Weekend",
+    "night",
+    "crew",
+    "city",
+    "entrance",
+    "experience"
+  ];
+  var index = 0;
+  var $word = $('.animated-word');
+  var interval = 1800; // ms
+
+  setInterval(function() {
+    // Animate out
+    $word.addClass('word-out');
+    setTimeout(function() {
+      // Change word
+      index = (index + 1) % words.length;
+      $word.text(words[index]);
+      // Animate in
+      $word.removeClass('word-out').addClass('word-in');
+      setTimeout(function() {
+        $word.removeClass('word-in');
+      }, 400);
+    }, 400);
+  }, interval);
 });
 
 AOS.init();

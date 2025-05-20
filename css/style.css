@@ -1879,16 +1879,7 @@ textarea.w-select {
 }
 
 
-p {
-    margin-bottom: 0;
-    font-family: neue-haas-grotesk-text, sans-serif;
-    line-height: 1.6;
-}
-a {
-    color: var(--white);
-    font-family: neue-haas-grotesk-text, sans-serif;
-    font-weight: 400;
-}
+
 ul,
 ol {
     margin-top: 0;
@@ -1906,10 +1897,7 @@ label {
     margin-bottom: 0.25rem;
     font-weight: 500;
 }
-strong {
-    font-family: neue-haas-grotesk-text, sans-serif;
-    font-weight: 700;
-}
+
 blockquote {
     border-left: 0.25rem solid #e2e2e2;
     margin-bottom: 0;

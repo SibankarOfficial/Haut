@@ -2983,10 +2983,7 @@ figcaption {
 .navbar1_menu-button {
     padding: 0;
 }
-.footer3_component {
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem;
-}
+
 .footer3_top-wrapper {
     grid-column-gap: 4vw;
     grid-template-rows: auto;

@@ -4441,52 +4441,7 @@ figcaption {
 .testimonial-arrow.left {
     inset: auto auto 0% 0%;
 }
-.swiper-component {
-    overflow: hidden;
-}
-.swiper-component.slider1.pill {
-    z-index: 10;
-    position: relative;
-    overflow: visible;
-}
-.swiper.swiper1 {
-    overflow: visible;
-}
-.swiper-wrapper {
-    flex-direction: row;
-    display: flex;
-}
-.swiper-wrapper.move-left {
-    transform: translate(-14rem);
-}
-.swiper-wrapper.move-right {
-    transform: translate(14rem);
-}
-.swiper-slide {
-    flex: none;
-    max-width: 53.375rem;
-    height: auto;
-}
-.swiper-slide.is-new {
-    max-width: none;
-    height: auto !important;
-}
-.swiper-pagination {
-    margin-top: 1.25rem;
-    position: relative;
-}
-.swiper-pagination-bullet {
-    border: 2px solid var(--white);
-    opacity: 0.3;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-}
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    opacity: 1;
-    background-image: linear-gradient(90deg, #fc0, #ff007a);
-    border-style: none;
-}
+    
 .hero-bg-image {
     object-fit: cover;
     width: 100%;

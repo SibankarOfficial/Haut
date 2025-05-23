@@ -1,4 +1,5 @@
-@import url(fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
     --primary-color: #FF1DC2;
     --secondary-color: #940BFF;
@@ -10,8 +11,8 @@
     --off-white: #636363;
     --black: #0a0b0d;
     --body-color:#0b021b;
-    --font-heading: 'Manrope',  sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: "Manrope", sans-serif;
+    --font-body: "Inter", sans-serif;
     --font-size-body: 16px;
     --font-weight-heading:600;
     --semi-bold:500;
@@ -24,6 +25,7 @@ body {
     font-family: var(--font-body);
     font-size:var(--font-size-body);
     line-height: var(--line-height-body);
+    overflow-x: hidden;
 }
 h1,h2,h3,h4 {
     font-family: var(--font-heading);
@@ -1411,11 +1413,13 @@ width: 100%;
     .de_tab .navigation_arrow{
     text-align:center;
     }
-    * schedule */
+    /* schedule */
 
 .schedule-item {
 	padding: 40px 0 30px 0;
 	border-bottom: solid 1px #eee;
+  display: flex;
+  align-items: center;
 }
 .dark .schedule-item {
 	padding: 40px 0 30px 0;
@@ -1435,13 +1439,12 @@ width: 100%;
 	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff', GradientType=1);
 }	
 
-.schedule-item>div {
+/* .schedule-item>div {
 	float: left;
-}
+} */
 .schedule-item .sc-time {
 	font-weight:bold;
 	width: 160px;
-	padding-top: 25px;
 	font-size:14px;
 }
 .schedule-item .sc-pic {
@@ -1460,7 +1463,6 @@ width: 100%;
 	font-weight: normal;
 	font-size: 14px;
 	width: 160px;
-	padding-top: 15px;
 }
 .schedule-item .sc-name h4 {
 	font-size: 14px;
@@ -1474,8 +1476,17 @@ width: 100%;
 .schedule-item .sc-info {
 	float: none;
 	display: inline-block;
-	width: 60%;
   text-align: left;
+  width: calc(100% - 650px);
+}
+.sc-info p{
+  margin: 0;
+}
+.sc-tickit{
+  float: none;
+	display: inline-block;
+  text-align: right;
+  width:120px;
 }
 .schedule-item .sc-info h3 {
 	font-size:18px !important;
@@ -1661,8 +1672,15 @@ strong {
 .footer-inner{
   background: #000;
 }
-
-
+.jarallax-container{
+  border-radius: 20px;
+}
+.footer-inner {
+    background-color: #191a1c80;
+    border: 1px solid #424344;
+    border-radius: 20px;
+    padding: 2.5rem 1.875rem 1.875rem;
+}
 
 /******other section*******/
 
@@ -2013,4 +2031,308 @@ width: 100%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+
+/*********slider banner***********/
+ /* Swiper container full screen */
+    .swiper {
+      width: 100vw;
+      min-height: 100vh;
+      position: relative;
+      margin-top: -110px;
+    }
+
+    /* Each slide */
+    .swiper-slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+      padding-top: 140px;
+    }
+
+    /* Background image with blur using a pseudo element */
+    .swiper-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: blur(12px);
+      transform: scale(1.1);
+      z-index: 0;
+      transition: background-image 0.5s ease;
+    }
+
+    /* Content card */
+    .slide-content {
+      position: relative;
+      /* z-index: 2;
+      background: rgba(0, 0, 0, 0.6); */
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      max-width: 900px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      user-select: none;
+      margin: 25px 0;
+    }
+
+    .slide-content h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .slide-content p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+    }
+
+    .slide-hosts {
+      margin: 0.8rem 0;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1rem;
+    }
+
+    .slide-hosts span {
+      background: #222;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      user-select: text;
+    }
+
+    .get-tickets-btn {
+      margin-top: 1.5rem;
+      background: #fff;
+      color: #222;
+      border: none;
+      border-radius: 24px;
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      user-select: none;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+   .get-tickets-btn:hover, .get-tickets-btn:focus {
+    background: #0b021b;
+    color: #fff;
+    outline: none;
+}
+
+    /* Swiper navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.4);
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+
+    /* Swiper pagination bullets */
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+      transition: background 0.3s;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .slide-content {
+        max-width: 90vw;
+        padding: 1.5rem 2rem;
+      }
+      .slide-content h1 {
+        font-size: 1.5rem;
+      }
+      .slide-content p,
+      .slide-hosts span,
+      .get-tickets-btn {
+        font-size: 1rem;
+      }
+      .get-tickets-btn {
+        width: 100%;
+        padding: 0.75rem 0;
+      }
+    }
+
+    /*********Dropdownn**********/
+.dropdown-bar {
+    display: flex;
+    gap: 10px;
+    background-color: #3a3a3a;
+    padding: 8px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-btn:hover {
+  background-color: #505050;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #2a2a2a;
+  border-radius: 10px;
+  padding: 5px 0;
+  min-width: 150px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.dropdown-content .dropdown-item {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-content .dropdown-item:hover {
+  background-color: #444;
+}
+
+.dropdown-content.city-dropdown {
+  min-width: 200px;
+}
+
+.city-search {
+  width: 90%;
+  margin: 5px auto;
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    color: white;
+}
+
+.card-profile {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  animation: rotate 4s linear infinite;
+}
+
+.card-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-date {
+  position: absolute;
+  top: 12px;
+  left: 60px;
+  background-color: black;
+  border-radius: 4px;
+  padding: 4px 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.card-date .month {
+  display: block;
+  color: #fff;
+  font-size: 10px;
+}
+
+.card-date .day {
+  font-size: 14px;
+}
+
+.card-info {
+  margin-top: auto;
+}
+
+.event-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.event-location {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0;
 }

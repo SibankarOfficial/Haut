@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fullscreen Swiper Slider with Blur Background</title>
+
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+
+  <style>
+    /* Reset & base */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    /* Swiper container full screen */
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    /* Each slide */
+    .swiper-slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Background image with blur using a pseudo element */
+    .swiper-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: blur(12px);
+      transform: scale(1.1);
+      z-index: 0;
+      transition: background-image 0.5s ease;
+    }
+
+    /* Content card */
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      user-select: none;
+    }
+
+    .slide-content h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .slide-content p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+    }
+
+    .slide-hosts {
+      margin: 0.8rem 0;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1rem;
+    }
+
+    .slide-hosts span {
+      background: #222;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      user-select: text;
+    }
+
+    .get-tickets-btn {
+      margin-top: 1.5rem;
+      background: #fff;
+      color: #222;
+      border: none;
+      border-radius: 24px;
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      user-select: none;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .get-tickets-btn:hover,
+    .get-tickets-btn:focus {
+      background: #222;
+      color: #fff;
+      outline: none;
+    }
+
+    /* Swiper navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.4);
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+
+    /* Swiper pagination bullets */
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.6);
+      opacity: 1;
+      transition: background 0.3s;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .slide-content {
+        max-width: 90vw;
+        padding: 1.5rem 2rem;
+      }
+      .slide-content h1 {
+        font-size: 1.5rem;
+      }
+      .slide-content p,
+      .slide-hosts span,
+      .get-tickets-btn {
+        font-size: 1rem;
+      }
+      .get-tickets-btn {
+        width: 100%;
+        padding: 0.75rem 0;
+      }
+    }
+
+
+
+
+
+
+    body {
+  font-family: sans-serif;
+  background: #1e1e1e;
+  padding: 40px;
+}
+
+.dropdown-bar {
+  display: flex;
+  gap: 10px;
+  background-color: #3a3a3a;
+  padding: 8px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-btn:hover {
+  background-color: #505050;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #2a2a2a;
+  border-radius: 10px;
+  padding: 5px 0;
+  min-width: 150px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.dropdown-content .dropdown-item {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-content .dropdown-item:hover {
+  background-color: #444;
+}
+
+.dropdown-content.city-dropdown {
+  min-width: 200px;
+}
+
+.city-search {
+  width: 90%;
+  margin: 5px auto;
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div
+        class="swiper-slide"
+        data-bg="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80"
+      >
+        <div class="slide-content">
+          <h1>MOREVIBESPLEASE MDW INDUSTRY CITY</h1>
+          <p><strong>Industry City</strong></p>
+          <p>Saturday May 24, 10:00 PM</p>
+          <div class="slide-hosts">
+            <span>MOREVIBESPLEASE</span>
+            <span>MAX GLAZER</span>
+          </div>
+          <p>166+ Going</p>
+          <a href="#" class="get-tickets-btn" tabindex="0">Get Tickets</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="swiper-slide"
+        data-bg="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1920&q=80"
+      >
+        <div class="slide-content">
+          <h1>SUMMER BEATS FESTIVAL</h1>
+          <p><strong>Central Park</strong></p>
+          <p>Friday June 7, 8:00 PM</p>
+          <div class="slide-hosts">
+            <span>DJ SUNSHINE</span>
+            <span>BEATMASTER</span>
+          </div>
+          <p>320+ Going</p>
+          <a href="#" class="get-tickets-btn" tabindex="0">Get Tickets</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="swiper-slide"
+        data-bg="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80"
+      >
+        <div class="slide-content">
+          <h1>NIGHT VIBES ELECTRO PARTY</h1>
+          <p><strong>Downtown Club</strong></p>
+          <p>Saturday July 12, 11:00 PM</p>
+          <div class="slide-hosts">
+            <span>ELECTROBEAT</span>
+            <span>DJ NEXUS</span>
+          </div>
+          <p>210+ Going</p>
+          <a href="#" class="get-tickets-btn" tabindex="0">Get Tickets</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <div class="dropdown-bar">
+    <!-- Dropdown 1 -->
+    <div class="dropdown">
+      <button class="dropdown-btn">Newest </button>
+      <div class="dropdown-content">
+        <div class="dropdown-item">Trending</div>
+        <div class="dropdown-item">Newest</div>
+        <div class="dropdown-item">Largest</div>
+      </div>
+    </div>
+
+    <!-- Dropdown 2 -->
+    <div class="dropdown">
+      <button class="dropdown-btn">Right Now </button>
+      <div class="dropdown-content">
+        <div class="dropdown-item">Today</div>
+        <div class="dropdown-item">This Week</div>
+        <div class="dropdown-item">This Month</div>
+        <div class="dropdown-item">Right Now</div>
+      </div>
+    </div>
+
+    <!-- Dropdown 3 -->
+    <div class="dropdown">
+      <button class="dropdown-btn">New York City </button>
+      <div class="dropdown-content city-dropdown">
+        <input type="text" placeholder="Search city..." class="city-search" />
+        <div class="dropdown-item">New York City</div>
+        <div class="dropdown-item">San Francisco</div>
+        <div class="dropdown-item">Los Angeles</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Swiper
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        on: {
+          init: function () {
+            updateBackgrounds();
+          },
+          slideChange: function () {
+            updateBackgrounds();
+          },
+        },
+      });
+
+      // Function to update each slide's ::before background-image from data-bg attribute
+      function updateBackgrounds() {
+        $('.swiper-slide').each(function () {
+          const bgUrl = $(this).attr('data-bg');
+          $(this).css('--bg-image', `url('${bgUrl}')`);
+          // Update ::before background-image via inline style (using CSS variable)
+          $(this).get(0).style.setProperty('--bg-image', `url('${bgUrl}')`);
+        });
+      }
+
+      // Set the background-image on the ::before pseudo-element via CSS variable
+      // We do this by injecting a style tag dynamically
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .swiper-slide::before {
+          background-image: var(--bg-image);
+        }
+      `;
+      document.head.appendChild(style);
+    });
+
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach((dropdown) => {
+  const btn = dropdown.querySelector(".dropdown-btn");
+  const content = dropdown.querySelector(".dropdown-content");
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeAllDropdowns();
+    content.style.display = "flex";
+  });
+});
+
+window.addEventListener("click", () => {
+  closeAllDropdowns();
+});
+
+function closeAllDropdowns() {
+  document.querySelectorAll(".dropdown-content").forEach((el) => {
+    el.style.display = "none";
+  });
+}
+
+// City search filter
+document.querySelector(".city-search").addEventListener("input", function () {
+  const filter = this.value.toLowerCase();
+  const items = this.parentElement.querySelectorAll(".dropdown-item");
+  items.forEach((item) => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(filter) ? "block" : "none";
+  });
+});
+
+  </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 :root {
     --primary-color: #FF1DC2;
     --secondary-color: #940BFF;
@@ -45,6 +46,16 @@ a:hover{
 }
 section{
   padding: 80px 0;
+}
+@media(min-width:1600px){
+.container{
+    max-width: 1500px;
+  }
+}
+@media(min-width:1800px){
+  .container{
+    max-width: 1700px;
+  }
 }
 /*****************scrollbar*********/
 ::-webkit-scrollbar {
@@ -321,7 +332,41 @@ body::-webkit-scrollbar {
 .btn-3:active {
   transform: scale(0.97);
 }
+.btn-4 {
+  padding: 0.75em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(255, 29, 194, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
 
+.btn-4::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.btn-4:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-4:hover {
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(148, 11, 255, 0.4);
+}
 .hoverEffect {
   position: absolute;
   bottom: 0;
@@ -378,13 +423,13 @@ body::-webkit-scrollbar {
 }
 
 .highlight-word {
-  background: linear-gradient(90deg, #940BFF, #FF1DC2, #940BFF);
+  background: linear-gradient(90deg,  #FF1DC2, #940BFF, #940BFF);
   background-size: 300%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s infinite linear;
+  /* animation: shimmer 3s infinite linear; */
 }
 
 @keyframes shimmer {
@@ -1757,25 +1802,54 @@ strong {
     align-self: flex-end;
 }
 .team-member-wrapper {
-    border-radius: 999em;
     width: 10em;
     height: 10em;
     font-size: 1.3em;
     position: relative;
     box-shadow: 0 44px 5.2em #0000004f;
+    overflow: hidden;
+  clip-path: polygon(
+  50% 0%, 70% 10%, 90% 35%, 
+  85% 70%, 60% 90%, 30% 100%, 
+  10% 80%, 0% 40%, 20% 15%
+);
+border-radius: 20px;
+
 }
 .team-member-wrapper.is-medium {
     font-size: .8em;
 }
+
 .team-member-image {
-    opacity: 1;
-    mix-blend-mode: luminosity;
-    object-fit: cover;
-    border-radius: 999em;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0%;
+  opacity: 1;
+  mix-blend-mode: luminosity;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+border-radius: 20px;
+clip-path: polygon(
+  50% 0%, 70% 10%, 90% 35%, 
+  85% 70%, 60% 90%, 30% 100%, 
+  10% 80%, 0% 40%, 20% 15%
+);
+
+
+  transition: all 0.6s ease-in-out;
+
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 .section-team{
   background: linear-gradient(
@@ -1816,7 +1890,7 @@ width: 100%;
       background: transparent;
     }
     .nav-tabs .nav-link {
-      color: #fff;
+      color: #bbb9b9;
       background: #23212b;
       border: none;
       border-radius: 1.5rem;
@@ -2408,4 +2482,180 @@ color: #cbcbcb;
   }
   .swiper-pagination {
     margin-top: 20px;
+  }
+
+
+  /******************Float iconnnn*********************/
+   .float-contact {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .float-contact:hover {
+      transform: scale(1.1);
+    }
+
+    .float-contact i {
+      font-size: 24px;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 29, 194, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(255, 29, 194, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 29, 194, 0);
+      }
+    }
+
+
+    /************modal*************/
+    .glass-modal {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.modal-content {
+  border: none;
+}
+
+.modal-body h5 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.btn-close {
+    background: none !important;
+    z-index: 111;
+}
+
+
+.ticket-container {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.counter-btn {
+  width: 2.2em;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.counter-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+#ticketCount {
+  min-width: 1.5em;
+  text-align: center;
+}
+
+#totalPrice {
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+
+
+
+.feature-section {
+  background-color: var(--color-3);
+}
+
+.highlight {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05); /* translucent base */
+  backdrop-filter: blur(12px);           /* actual glass blur */
+  -webkit-backdrop-filter: blur(12px);   /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+.feature-card h5{
+   font-family: "Outfit", sans-serif;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 29, 194, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.icon-box {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.pricing-section {
+    background: linear-gradient(124deg, #210043 5%, #940BFF 50%, #000 100%);
+    background-color: var(--color-3);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.glass-card {
+  max-width: 600px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-card .compare-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+ .glass-card1 {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }

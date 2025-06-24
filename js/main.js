@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
   setTimeout(() => {
     document.querySelector('.loader-wrapper').style.display = 'none';
     // document.querySelector('.main-content').style.display = 'block';
-  }, 3000); // 2 seconds
+  }, 2000); // 2 seconds
 });
 
 
@@ -153,3 +153,4 @@ document.querySelector(".city-search").addEventListener("input", function () {
     item.style.display = text.includes(filter) ? "block" : "none";
   });
 });
+

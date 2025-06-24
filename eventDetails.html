@@ -20,7 +20,16 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <!---Cursor end-->
-
+  <div class="float-contact" onclick="window.location.href='mailto:contact@example.com';">
+    <i class="fas fa-envelope"></i>
+  </div>
+    <div class="loader-wrapper">
+    <div class="loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
     <!---Loader start-->
     <!-- <div class="loader-wrapper">
     <div class="loader">
@@ -49,13 +58,13 @@
                 <div class="collapse navbar-collapse justify-content-end">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html" target="_blank">Home</a>
+                            <a class="nav-link" href="index.html" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="becomeAHost.html" target="_blank">Become A Host</a>
+                            <a class="nav-link" href="becomeAHost.html" >Become A Host</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="exploreEvents.html" target="_blank">Explore Events</a>
+                            <a class="nav-link" href="exploreEvents.html" >Explore Events</a>
                         </li>
                         <li class="nav-item">
                             <button class="btn-3">
@@ -72,10 +81,10 @@
         <!-- Mobile Fullscreen Menu -->
         <div class="custom-menu" id="customMenu">
             <div class="close-btn" id="closeMenu">&times;</div>
-            <a href="" target="_blank">Home</a>
-            <a href="" target="_blank">Become A Host</a>
-            <a href="" target="_blank">Explore Events</a>
-            <a href="" target="_blank">Download App</a>
+            <a href="" >Home</a>
+            <a href="" >Become A Host</a>
+            <a href="" >Explore Events</a>
+            <a href="" >Download App</a>
         </div>
     </header>
 
@@ -93,12 +102,12 @@
                             <p>1 Hotel Brooklyn Bridge
 
                             </p>
-<p>Sun, May 25 at 2:00 PM - 10:00 PM (EDT)</p>
-<div class="info-event">
-    <i class="fa-regular fa-location-dot"></i>
-    <span>Luna Springs - Digbeth, Birmingham</span>
-  </div>
-<span>1 hotel Summer Experience Returns Every Sunday May-Sept.</span>
+                            <p>Sun, May 25 at 2:00 PM - 10:00 PM (EDT)</p>
+                            <div class="info-event">
+                                <i class="fa-regular fa-location-dot"></i>
+                                <span>Luna Springs - Digbeth, Birmingham</span>
+                            </div>
+                            <span>1 hotel Summer Experience Returns Every Sunday May-Sept.</span>
                             
                         </div>
                         <div class="col-lg-6">
@@ -124,11 +133,6 @@
 
 <p>Sounds By: KAZ JAMES , TMP0007, Rachel Winters</p>
 
-<p>Follow our journey on Instagram @soltogether and stay connected at www.soltogether.world</p>
-<p>Open rain or shine - In case of inclement weather, we have an indoor venue with identical panoramic views to keep the energy alive.</p>
-
-<p>Table service available - elevate your experience with access to NYCs most desirable pools (Limited only to hotel guests & VIP clients)</p>
-
 <p>For any further infromation , feel free to text us at 3472601950</p>
 
 <p>Tickets are non-refundable.</p>
@@ -142,14 +146,6 @@
 <p>SOL AT THE 1 HOTEL IS THE QUINTESSENTIAL ROOFTOP SERIES THIS SUMMER, LOCATED AT THE GLOBALLY RECOGNIZED 1 HOTEL BROOKLYN BRIDGE.</p>
 
 <p>DELVE INTO AN UNPARALLELED ROOFTOP EXPERIENCE AT SOL, WHERE EXQUISITE COCKTAILS, AWE-INSPIRING VIEWS OF THE NYC SKYLINE, AND CAPTIVATING MUSIC MERGE FOR AN UNMATCHED SUNDAY.</p>
-
-<p>SERIES STARTS IN MAY AND ENDS SEPTEMBER.</p>
-
-<p>22 SUNDAYS, 22 SUNSETS, 22 EVENTS ALL SUMMER LONG.</p>
-
-<p>EVENT HOURS: 2PM - 10PM ON THE ROOF / 10PM - 3AM IN THE LOUNGE.</p>
-
-<p>STARTING OFF YOUR DAY WITH SUN RAYS AT THE POOL, TO DRINKING ROSÉ AT SUNSET, AND ENDING YOUR NIGHT AWAY IN OUR HARRIET’S LOUNGE DOWNSTAIRS.</p>
 
 
                     </div>
@@ -179,7 +175,6 @@
     <span>Age restrictions: 18+</span>
   </div>
 
- 
 
 
   <div class="host-followers">
@@ -198,6 +193,26 @@
     </div>
   </div>
 </div>
+<div class="ticket-container">
+  
+  <!-- Counter -->
+  <div class="counter d-flex align-items-center gap-3">
+    <button class="btn btn-outline-light btn-sm rounded-circle counter-btn" id="decrement">
+      <i class="fas fa-minus"></i>
+    </button>
+
+    <span id="ticketCount" class="fs-5 fw-bold">1</span>
+
+    <button class="btn btn-outline-light btn-sm rounded-circle counter-btn" id="increment">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+
+  <!-- Price Display -->
+  <div class="fs-5 fw-semibold price">Total Price: <span class="" id="totalPrice">₹500</span></div>
+</div>
+
+ <button class="btn-4 w-100"  data-bs-toggle="modal" data-bs-target="#appModal">Get Tickets</button>
 
 </div>
                 </div>
@@ -214,7 +229,7 @@
                 <h3 class="main-title">Other <span class="highlight-word">Events</span></h3>
             </div>
             <div class="col-lg-4">
-                <a href="eventDetails.html" target="_blank">
+                <a href="eventDetails.html" >
  <div class="card">
     <img src="img/event4.webp" alt="Event Background" class="card-bg" />
     <div class="card-overlay">
@@ -235,7 +250,8 @@
 
             </div>
             <div class="col-lg-4">
-                 <div class="card">
+                <a href="eventDetails.html" >
+ <div class="card">
     <img src="img/event4.webp" alt="Event Background" class="card-bg" />
     <div class="card-overlay">
       <div class="card-profile">
@@ -251,9 +267,11 @@
       </div>
     </div>
   </div>
+                </a>
             </div>
             <div class="col-lg-4">
-                 <div class="card">
+                <a href="eventDetails.html" >
+ <div class="card">
     <img src="img/event4.webp" alt="Event Background" class="card-bg" />
     <div class="card-overlay">
       <div class="card-profile">
@@ -269,9 +287,11 @@
       </div>
     </div>
   </div>
+                </a>
             </div>
              <div class="col-lg-4">
-                 <div class="card">
+                <a href="eventDetails.html" >
+ <div class="card">
     <img src="img/event4.webp" alt="Event Background" class="card-bg" />
     <div class="card-overlay">
       <div class="card-profile">
@@ -287,6 +307,7 @@
       </div>
     </div>
   </div>
+                </a>
             </div>
         </div>
     </div>
@@ -325,7 +346,7 @@
                                     </div>
                                 </div>
                                 <div class="div-block-14">
-                                    <a href="#" target="_blank" class="w-inline-block">
+                                    <a href="#"  class="w-inline-block">
                                         <img
                                             src="https://cdn.prod.website-files.com/65ef8a3bdecf96836a4ffd5e/671aa39f9dadd66184cea311_Download_on_the_App_Store_Badge.svg.webp"
                                             loading="lazy"
@@ -336,7 +357,7 @@
                                             class="apple-store-img"
                                         />
                                     </a>
-                                    <a href="#" target="_blank" class="w-inline-block">
+                                    <a href="#"  class="w-inline-block">
                                         <img
                                             src="https://cdn.prod.website-files.com/65ef8a3bdecf96836a4ffd5e/671aa42958429c591049525b_Store%3DGoogle%20Play%2C%20Type%3DDark%2C%20Language%3DEnglish.svg"
                                             loading="lazy"
@@ -372,8 +393,8 @@
                                         </div>
                                     </div>
                                     <div class="footer-acc-list">
-                                        <a href="/about" class="footer3_link">About</a><a href="" target="_blank" class="footer3_link">Careers</a>
-                                        <a href="" target="_blank" class="footer3_link">Haut TV</a>
+                                        <a href="/about" class="footer3_link">About</a><a href=""  class="footer3_link">Careers</a>
+                                        <a href=""  class="footer3_link">Haut TV</a>
                                     </div>
                                 </div>
                                 <div class="footer3_link-list">
@@ -385,7 +406,7 @@
                                         </div>
                                     </div>
                                     <div class="footer-acc-list">
-                                        <a href="" target="_blank" class="footer3_link">Support</a><a href="" target="_blank" class="footer3_link is-1-mobile">FAQ</a>
+                                        <a href=""  class="footer3_link">Support</a><a href=""  class="footer3_link is-1-mobile">FAQ</a>
                                         <a href="https://calendly.com/d/5k4-6w5-ft2" class="footer3_link">Request A Demo</a>
                                     </div>
                                 </div>
@@ -397,10 +418,10 @@
                         <div class="footer3_bottom-wrapper">
                             <div class="footer3_legal-list">
                                 <div class="footer3_credit-text">©2025 Haut</div>
-                                <a href="" target="_blank" class="footer3_legal-link">Privacy Policy</a><a href="#" target="_blank" class="footer3_legal-link">Terms of Service</a>
+                                <a href=""  class="footer3_legal-link">Privacy Policy</a><a href="#"  class="footer3_legal-link">Terms of Service</a>
                             </div>
                             <div class="w-layout-grid footer3_social-list">
-                                <a href="" target="_blank" class="footer3_social-link w-inline-block">
+                                <a href=""  class="footer3_social-link w-inline-block">
                                     <div class="icon-embed-xsmall w-embed">
                                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -412,7 +433,7 @@
                                         </svg>
                                     </div>
                                 </a>
-                                <a href="" target="_blank" class="footer3_social-link w-inline-block">
+                                <a href=""  class="footer3_social-link w-inline-block">
                                     <div class="icon-embed-xsmall w-embed">
                                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -422,7 +443,7 @@
                                         </svg>
                                     </div>
                                 </a>
-                                <a href="" target="_blank" class="footer3_social-link w-inline-block">
+                                <a href=""  class="footer3_social-link w-inline-block">
                                     <div class="icon-embed-xsmall w-embed">
                                         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -444,7 +465,27 @@
     
 <!--Footer end-->
 
+<div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content glass-modal p-4 rounded-4 text-center position-relative">
 
+      <!-- Close Button -->
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close">
+        <i class="fas fa-times text-white fs-5"></i>
+      </button>
+
+      <!-- Modal Body -->
+      <div class="modal-body d-flex flex-column align-items-center gap-3">
+        <img src="img/haut png_.png" alt="Logo" style="width: 100px;">
+        <h5 class="text-white">Download our app to<br>book tickets</h5>
+        <a href="#" class="btn btn-light px-4 py-2 rounded-pill fw-semibold">
+          <i class="fab fa-apple me-2"></i> Get it on App Store
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 
@@ -502,6 +543,34 @@
       `;
             document.head.appendChild(style);
         });
+
+        $(document).ready(function () {
+  const ticketPrice = 500;
+  let ticketCount = 1;
+
+  function updatePriceAnimated() {
+    const newTotal = ticketCount * ticketPrice;
+    $('#totalPrice').fadeOut(150, function () {
+      $(this).text(`₹${newTotal}`).fadeIn(150);
+    });
+  }
+
+  $('#increment').on('click', function () {
+    if (ticketCount < 5) {
+      ticketCount++;
+      $('#ticketCount').text(ticketCount);
+      updatePriceAnimated();
+    }
+  });
+
+  $('#decrement').on('click', function () {
+    if (ticketCount > 1) {
+      ticketCount--;
+      $('#ticketCount').text(ticketCount);
+      updatePriceAnimated();
+    }
+  });
+});
     </script>
 </body>
 
